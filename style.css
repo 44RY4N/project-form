@@ -33,11 +33,12 @@ body{
 
 .header-container{
    
-    height: 27vh;
+    max-height: 22vh;
     width: 50vw;
     z-index: 2;
     background: linear-gradient(to bottom, rgb(0, 56, 45) 0%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%);
     text-align: center;
+    border:2px solid white;
 }
 
 .header-container h1{
@@ -97,7 +98,9 @@ text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0
 
 
 .form-container.register{
+    position:absolute;
     height: 40vh;
+    top:30vh;
     z-index: 0;
     display:block
 }
@@ -105,6 +108,7 @@ text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0
 
 .form-container.login{
     position:absolute;
+    height: 40vh;
     top:30vh;
     display: block;
 }
@@ -126,10 +130,11 @@ text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0
 .text1,.text2{
     font-size: min(2rem,3vh);
     text-align: center;
-
+    display: flex;
+    flex-direction: column;
+    border:2px solid white;
+    margin-top:-5vh;
 }
-
-
 
 
 
@@ -186,7 +191,62 @@ background-position: center;
 }
 
 
+.registeration>div>input{
 
+
+     border-color: #CCCCCC;
+     color: white;
+     border-style: solid;
+     border-radius: 0px;
+     transition: all 0.4s ease-in-out;
+}
+
+.registeration>div>input:hover{
+     box-shadow: 10px 0px 10px rgb(255, 255, 255);
+}
+
+.registeration>div>input:focus{
+
+   box-shadow: -10px 0px 10px rgb(0, 208, 255);
+}
+
+
+.registeration>div>input:valid{
+
+    box-shadow: 10px 0px 10px rgb(0, 255, 149);
+}
+
+
+.footer{
+    font-size: min(3vw,2rem);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+@keyframes wee {
+    0%{
+        transform:translateX(0);
+    }
+    50%{
+        transform:translateY(-200%);
+    }
+    100%{
+        right:200%;
+    }
+}
+
+.footer .contain{
+    content:"";    
+    background: url("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXJkM2MyaDY1cWNxOHUzb2R2ZnRpempyaHVpazJvbjczd2h4YmdoMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/i229PTC8BKt9V9RnwZ/giphy.gif");
+    background-size: contain;
+    height: 10vh;
+        animation:wee 20s infinite ;
+        overflow:hidden;
+        z-index:-2;
+}
 
 
 
@@ -201,7 +261,6 @@ background-position: center;
 .registeration>div>div>label{
     color: #FFFFFF;
 background: transparent;
-text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
 }
 
 
@@ -263,4 +322,34 @@ background-color: white;
 .form-container.register .login:hover{
     color:white;
     text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    border:2px solid greenyellow;
+}
+
+
+.form-container.register .login{
+    transition:all 2s ease-in-out;
+    min-width: 6vw;
+    min-height: 2vw;
+    border-radius: 40%;
+}
+
+.form-container.login .register{
+    transition:all 2s ease-in-out;
+    min-width: 6vw;
+    min-height: 2vw;
+    border-radius: 40%;
+}
+
+
+.registeration .btn>button{
+    transition:all 2s ease-in-out;
+    min-width: 6vw;
+    min-height: 2vw;
+    border-radius: 40%;
+}
+
+.registeration .btn>button:hover{
+    color:white;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    border:2px solid greenyellow;
 }
