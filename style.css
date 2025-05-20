@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root{
+    --dbug: 2px solid black;
+}
+
+body{
+    display: flex;
+    position: relative;
+}
+
+
+
+.header-container{
+    border:var(--dbug);
+    height: 30%;
+    z-index: 2;
+}
+
+.footer{
+    height: 30%;
+    z-index: 2;
+}
+
+.img-container{
+    display: absolute;
+    height: 100vh;
+    min-width: 50vw;
+    border:var(--dbug);
+    z-index: 2;
+}
+
+.form-container{
+    height: 40vh;
+    z-index: 0;
+}
+
+
+.registeration{
+    display:flex;
+    flex-wrap:wrap;
+    width:100%;
+    height: 37vh;
+        justify-content: center;
+        border: var(--dbug);
+        position: relative;
+        
+}
+
+.registeration>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding:.3vw;
+    flex:1;
+    border: 3px solid red;
+    min-width: 40%;
+    margin-left:4.5vw;
+}
+
+.registeration::before{
+    content:"";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(1,1,1,0.6);
+    position: absolute;
+
+
+}
+
+
+
+.registeration:hover .registeration::before{
+    transform: translateX(-440.1px);
+}
+
+
+
+
+
+.registeration>div>div{
+    width: 55%;
+    text-align: left;
+    font-size: 1.2rem;
+    border:3px solid pink;
+}
+
+.registeration>div>input{
+    border:3px solid blue;
+    width: 55%;
+    height: 2.5vh;
+}
