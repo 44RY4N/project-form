@@ -2,7 +2,23 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: MyFont;
+    background-color: rgb(0, 0, 0);
+    color:#E0E0E0;
+    
 }
+
+
+@font-face {
+  font-family: 'MyFont';
+  src: url('./fonts/metropolis.regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
 
 :root{
     --dbug: 2px solid black;
@@ -16,39 +32,124 @@ body{
 
 
 .header-container{
-    border:var(--dbug);
-    height: 30%;
+   
+    height: 27vh;
+    width: 50vw;
     z-index: 2;
+    background: linear-gradient(to bottom, rgb(0, 56, 45) 0%, rgb(0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+    text-align: center;
+}
+
+.header-container h1{
+    background: transparent;
+    margin:2vw;
+    color: #e0dfdc;
+    margin-bottom:4vw;
+    padding-bottom:2vw;
+background-color: rgb(70, 70, 70);
+letter-spacing: .1em;
+text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+.right{
+    display: flex;
+    width: 50vw;;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .footer{
-    height: 30%;
+    height: 30vh;
     z-index: 2;
+    justify-content: flex-end;
+    background: linear-gradient(to bottom, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 50%, rgb(0, 48, 26) 100%);
 }
 
 .img-container{
-    display: absolute;
+   position: relative;
     height: 100vh;
     min-width: 50vw;
-    border:var(--dbug);
+    border-right:3px solid rgb(41, 41, 41);
     z-index: 2;
+    background: url("./logo/bg.jpg");
+    background-size: cover;
+    align-content: center;
 }
 
-.form-container{
+.img-container span{
+    width:100%;
+    background-color: transparent;
+    font-family: "norse bold";
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    backdrop-filter: blur(0.3em);
+    font-size: 1.4em;
+}
+
+.img-container span img{
+    max-height: auto;
+    max-width: 10vw;
+    background-color: transparent;
+}
+
+
+
+
+.form-container.register{
     height: 40vh;
     z-index: 0;
+    display:block
 }
+
+
+.form-container.login{
+    position:absolute;
+    top:30vh;
+    display: block;
+}
+
+
+.form-container.login.inactive{
+    display:none;
+}
+
+.form-container.register.inactive{
+    display:none;
+}
+
+
+
+
+
+
+.text1,.text2{
+    font-size: min(2rem,3vh);
+    text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .registeration{
+    
     display:flex;
     flex-wrap:wrap;
     width:100%;
     height: 37vh;
         justify-content: center;
-        border: var(--dbug);
-        position: relative;
-        
+    position: relative;
+    overflow:hidden;
+    
 }
 
 .registeration>div{
@@ -58,7 +159,7 @@ body{
     align-items: flex-start;
     padding:.3vw;
     flex:1;
-    border: 3px solid red;
+
     min-width: 40%;
     margin-left:4.5vw;
 }
@@ -66,32 +167,100 @@ body{
 .registeration::before{
     content:"";
     height: 100%;
-    width: 100%;
-    background-color: rgba(1,1,1,0.6);
+    width: 50vw;
+    background: url("./logo/doors.jpg");
+background-size: contain;
+background-repeat:repeat-x;
+background-position: center;
+
     position: absolute;
-
+    transition: transform 0.8s ease;
 
 }
 
 
 
-.registeration:hover .registeration::before{
-    transform: translateX(-440.1px);
+.registeration:hover::before{
+    transform: translateX(-50vw);
+     transition: transform 0.8s ease;
 }
+
 
 
 
 
 
 .registeration>div>div{
+    
     width: 55%;
     text-align: left;
     font-size: 1.2rem;
-    border:3px solid pink;
+
 }
 
+.registeration>div>div>label{
+    color: #FFFFFF;
+background: transparent;
+text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
+
+
 .registeration>div>input{
-    border:3px solid blue;
-    width: 55%;
+
+    width: 45%;
     height: 2.5vh;
+}
+
+.form-container.login .registeration{
+    width: 50vw;
+    flex-direction: column;
+    
+}
+
+.form-container.login .registeration>div{
+
+
+    align-items: center;
+}
+.form-container.login .registeration>div>div{
+    text-align: center;
+}
+
+
+div.logos {
+    display: flex;
+    flex-direction: row;
+    gap:1.5em;
+    margin-top: -3vw;
+    align-content: flex-start;
+    background:transparent;
+}
+
+div.logos>svg{
+
+background-color: white;
+
+}
+
+.form-container.login .registeration>div.btn{
+    justify-content: space-evenly;
+    font-size: 0.8em;
+}
+
+.submit{
+
+    max-width: 5rem;
+    width: 20%;
+}
+
+
+.form-container.login .register:hover{
+    color:white;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
+.form-container.register .login:hover{
+    color:white;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
 }
