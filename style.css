@@ -177,7 +177,7 @@ background-repeat:repeat-x;
 background-position: center;
 
     position: absolute;
-    transition: transform 0.8s ease;
+    transition: transform 0.6s ease;
 
 }
 
@@ -185,7 +185,7 @@ background-position: center;
 
 .registeration:hover::before{
     transform: translateX(-50vw);
-     transition: transform 0.8s ease;
+     transition: transform 0.6s ease;
 }
 
 
