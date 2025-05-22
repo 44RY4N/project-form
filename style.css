@@ -16,6 +16,20 @@
   font-style: normal;
 }
 
+#spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  mask-image: radial-gradient(circle at 25vw 50vh, transparent 200px, rgba(0, 0, 0, 1) 210px);
+}
 
 
 
@@ -28,6 +42,15 @@ body{
     display: flex;
     position: relative;
 }
+
+
+
+.registeration {
+  z-index: 3;
+  position: relative;
+}
+
+
 
 
 
@@ -277,11 +300,14 @@ background: transparent;
 
 .form-container.login .registeration>div{
 
-
     align-items: center;
 }
 .form-container.login .registeration>div>div{
     text-align: center;
+     margin-left:-4vw;
+}
+.form-container.login .registeration>div>input{
+     margin-left:-4vw;
 }
 
 
@@ -292,6 +318,7 @@ div.logos {
     margin-top: -3vw;
     align-content: flex-start;
     background:transparent;
+    margin-left:-0.5vw;
 }
 
 div.logos>svg{
@@ -303,9 +330,10 @@ background-color: white;
 .form-container.login .registeration>div.btn{
     justify-content: space-evenly;
     font-size: 0.8em;
+    margin-left: -1px;
 }
 
-.submit{
+.submition{
 
     max-width: 5rem;
     width: 20%;
